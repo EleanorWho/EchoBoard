@@ -31,7 +31,7 @@ EchoBoard creates a **visual, inclusive development workspace** that connects:
 
 ### 🎨 **Design + Code Integration**
 - **Figma Sync**: Real-time design updates and specifications
-- **GitHub Integration**: Code progress visualization for non-technical users
+- **Code Repository Integration**: Development progress visualization for non-technical users
 - **Visual Diff**: Show how implementations match (or differ from) designs
 
 ### 👥 **Cross-functional Collaboration**
@@ -52,32 +52,6 @@ EchoBoard creates a **visual, inclusive development workspace** that connects:
 - **Product Owners**: Track progress visually, understand technical constraints
 - **Stakeholders**: Stay informed without technical complexity
 
-## ✨ Core Features (Planned)
-
-### 🔄 **Smart Integrations**
-- [ ] Figma API integration for design sync
-- [ ] GitHub webhook integration for code tracking
-- [ ] Automated design-to-code comparison
-- [ ] Real-time collaboration notifications
-
-### 📱 **Inclusive Interface**
-- [ ] Visual project dashboards
-- [ ] Design annotation and feedback tools
-- [ ] Code progress visualization
-- [ ] Multi-role permission system
-
-### 🛠 **Developer Experience**
-- [ ] Clean API for custom integrations
-- [ ] Automated deployment previews
-- [ ] Design token synchronization
-- [ ] Development workflow automation
-
-### 📈 **Project Management**
-- [ ] Visual sprint planning
-- [ ] Cross-functional task tracking
-- [ ] Progress reporting for stakeholders
-- [ ] Timeline and milestone visualization
-
 ## 🎨 Design Principles
 
 ### **🔗 Connectivity**
@@ -92,41 +66,19 @@ Ensure every team member can contribute effectively, regardless of technical bac
 ### **⚡ Efficiency**
 Reduce context switching and communication overhead
 
-## 🛣 Development Roadmap
-
-### **Phase 1: Foundation** 🏗
-- [ ] Core platform architecture
-- [ ] Basic Figma integration
-- [ ] GitHub repository connection
-- [ ] User authentication and team management
-
-### **Phase 2: Collaboration** 🤝
-- [ ] Real-time design-code sync
-- [ ] Visual feedback system
-- [ ] Progress dashboards
-- [ ] Notification system
-
-### **Phase 3: Intelligence** 🧠
-- [ ] Automated design-implementation matching
-- [ ] Smart suggestions and insights
-- [ ] Advanced reporting and analytics
-- [ ] Custom workflow automation
-
 ## 🌱 Getting Started
 
 **EchoBoard is currently in early development.** 
 
 I'm building a platform that will transform how small teams collaborate on software projects. Star this repository to stay updated on my progress!
 
+### 📬 Interested in Contributing?
 
-## 🔮 Technology Vision
-
-I'm planning to build EchoBoard with modern, scalable technologies to ensure reliability and performance:
-
-- **Frontend**: Modern web technologies for responsive, intuitive interfaces
-- **Backend**: Robust API architecture supporting real-time collaboration
-- **Integrations**: Secure, efficient connections to Figma, GitHub, and other tools
-- **Security**: Enterprise-grade security for protecting design and code assets
+I welcome contributions from:
+- **Frontend/Backend Developers** - Help build the platform
+- **UI/UX Designers** - Shape the user experience  
+- **Product Managers** - Define features and workflows
+- **Early Adopters** - Test and provide feedback
 
 ## 📞 Contact & Community
 
@@ -138,4 +90,4 @@ I'm planning to build EchoBoard with modern, scalable technologies to ensure rel
 
 ### 🌟 **"In EchoBoard, every voice matters - from the first design sketch to the final deployment."**
 
-*Star this repo to follow my journey in transforming development collaboration!* ⭐
+*Star this repo to follow my journey in transforming development collaboration!* ⭐ 
