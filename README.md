@@ -1,4 +1,4 @@
-# EchoBoard 📋✨
+# EchoBoard 📋
 
 > *Where every voice in the development process can be heard*
 
@@ -71,14 +71,6 @@ Reduce context switching and communication overhead
 **EchoBoard is currently in early development.** 
 
 I'm building a platform that will transform how small teams collaborate on software projects. Star this repository to stay updated on my progress!
-
-### 📬 Interested in Contributing?
-
-I welcome contributions from:
-- **Frontend/Backend Developers** - Help build the platform
-- **UI/UX Designers** - Shape the user experience  
-- **Product Managers** - Define features and workflows
-- **Early Adopters** - Test and provide feedback
 
 ## 📞 Contact & Community
 
