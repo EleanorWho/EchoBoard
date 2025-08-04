@@ -1,10 +1,10 @@
-package com.app.EchoBoard;
+package com.app.echoboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EchoBoardApplicationTests {
+class EchoboardApplicationTests {
 
 	@Test
 	void contextLoads() {
