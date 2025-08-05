@@ -12,8 +12,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 项目实体
- * EchoBoard协作的核心单位，支持小团队(2-10人)协作
+ * Project Entity
+ * Core unit of EchoBoard collaboration, supports small teams (2-10 members)
  */
 @Entity
 @Table(name = "projects")
@@ -23,50 +23,50 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "项目名称不能为空")
-    @Size(min = 2, max = 100, message = "项目名称长度应在2-100字符之间")
+    @NotBlank(message = "Project name cannot be blank")
+    @Size(min = 2, max = 100, message = "Project name length should be between 2 and 100 characters")
     @Column(nullable = false)
     private String name;
 
-    @Size(max = 500, message = "项目描述不能超过500字符")
+    @Size(max = 500, message = "Project description cannot exceed 500 characters")
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    // 项目状态
+    // Project status
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ProjectStatus status = ProjectStatus.ACTIVE;
 
-    // 项目创建者
-    @NotNull(message = "项目创建者不能为空")
+    // Project creator
+    @NotNull(message = "Project creator cannot be blank")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by", nullable = false)
     private User createdBy;
 
-    // 第三方集成配置（为未来扩展预留）
+    // Third-party integration configuration (reserved for future expansion)
     @Column(name = "github_repo_url")
-    private String githubRepoUrl; // GitHub仓库地址
+    private String githubRepoUrl; // GitHub repository URL
 
     @Column(name = "github_repo_owner")
-    private String githubRepoOwner; // GitHub仓库所有者
+    private String githubRepoOwner; // GitHub repository owner
 
     @Column(name = "github_repo_name")
-    private String githubRepoName; // GitHub仓库名称
+    private String githubRepoName; // GitHub repository name
 
     @Column(name = "figma_file_url")
-    private String figmaFileUrl; // Figma设计文件地址
+    private String figmaFileUrl; // Figma design file URL
 
     @Column(name = "figma_file_key")
-    private String figmaFileKey; // Figma文件ID
+    private String figmaFileKey; // Figma file ID
 
-    // 项目设置
+    // Project settings
     @Column(name = "is_public", nullable = false)
-    private Boolean isPublic = false; // 项目是否公开
+    private Boolean isPublic = false; // Whether the project is public
 
     @Column(name = "max_members")
-    private Integer maxMembers = 10; // 最大成员数量限制
+    private Integer maxMembers = 10; // Maximum member limit
 
-    // 审计字段
+    // Audit fields
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -75,11 +75,11 @@ public class Project {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // 项目成员关系
+    // Project member relationship
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ProjectMember> members = new HashSet<>();
 
-    // 构造函数
+    // Constructors
     public Project() {}
 
     public Project(String name, String description, User createdBy) {
@@ -209,7 +209,7 @@ public class Project {
         this.members = members;
     }
 
-    // 业务方法
+    // Business methods
     public boolean hasGithubIntegration() {
         return githubRepoUrl != null && githubRepoOwner != null && githubRepoName != null;
     }
@@ -238,12 +238,12 @@ public class Project {
     }
 
     /**
-     * 项目状态枚举
+     * Project status enum
      */
     public enum ProjectStatus {
-        ACTIVE("活跃"),
-        ARCHIVED("已归档"),
-        DELETED("已删除");
+        ACTIVE("Active"),
+        ARCHIVED("Archived"),
+        DELETED("Deleted");
 
         private final String displayName;
 

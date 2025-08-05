@@ -13,8 +13,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 用户实体
- * 支持传统注册和OAuth2第三方登录
+ * User Entity
+ * Support traditional registration and OAuth2 third-party login
  */
 @Entity
 @Table(name = "users")
@@ -24,39 +24,39 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "邮箱不能为空")
-    @Email(message = "邮箱格式不正确")
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Invalid email format")
     @Column(unique = true, nullable = false)
     private String email;
 
-    @NotBlank(message = "姓名不能为空")
-    @Size(min = 2, max = 50, message = "姓名长度应在2-50字符之间")
+    @NotBlank(message = "Name cannot be blank")
+    @Size(min = 2, max = 50, message = "Name length should be between 2 and 50 characters")
     @Column(nullable = false)
     private String name;
 
     @Column(name = "avatar_url")
     private String avatarUrl;
 
-    @NotNull(message = "用户角色不能为空")
+    @NotNull(message = "User role cannot be blank")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    // OAuth2 相关字段
+    // OAuth2 related fields
     @Column(name = "oauth_provider")
-    private String oauthProvider; // "github", "google", "figma" 等
+    private String oauthProvider; // "github", "google", "figma", etc.
 
     @Column(name = "oauth_id")
-    private String oauthId; // 第三方平台的用户ID
+    private String oauthId; // User ID on third-party platform
 
     @Column(name = "oauth_username")
-    private String oauthUsername; // 第三方平台的用户名（如GitHub username）
+    private String oauthUsername; // User name on third-party platform (e.g., GitHub username)
 
-    // 账户状态
+    // Account status
     @Column(name = "is_active", nullable = false)
     private Boolean isActive = true;
 
-    // 审计字段
+    // Audit fields
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -65,11 +65,11 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // 与项目的关系（通过ProjectMember实现多对多）
+    // Relationship with projects (implemented through ProjectMember for many-to-many)
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<ProjectMember> projectMemberships = new HashSet<>();
 
-    // 构造函数
+    // Constructors
     public User() {}
 
     public User(String email, String name, Role role) {
@@ -78,7 +78,7 @@ public class User {
         this.role = role;
     }
 
-    // OAuth2 构造函数
+    // OAuth2 constructor
     public User(String email, String name, Role role, String oauthProvider, String oauthId) {
         this(email, name, role);
         this.oauthProvider = oauthProvider;
@@ -182,7 +182,7 @@ public class User {
         this.projectMemberships = projectMemberships;
     }
 
-    // 业务方法
+    // Business methods
     public boolean isOAuthUser() {
         return oauthProvider != null && oauthId != null;
     }
